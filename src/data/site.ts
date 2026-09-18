@@ -163,24 +163,6 @@ export const testimonials = [
 
 export const teamMembers = [
   {
-    name: 'Scott Bahe, MHA, NHA',
-    role: 'Administrator',
-    photo: 'staffBahe' as const,
-    bio: [
-      'Scott has been the administrator of Hilltop Estates for over 20 years. Mr. Bahe has a master\'s degree in healthcare administration from Bellevue University. His wife Linda and he have raised a family of three sons and currently has four grandchildren.',
-    ],
-    email: 'scott@hilltop-estates.com',
-  },
-  {
-    name: 'Loretta Smith, RN, DON',
-    role: 'Director of Nursing',
-    photo: null,
-    bio: [
-      'Loretta is a mother of three and has been a nurse for over 20 years. She has a passion for the elderly and long-term care.',
-    ],
-    email: 'donhilltop@qwestoffice.net',
-  },
-  {
     name: 'Kandace Davis, DPT, CSCS',
     role: 'Physical Therapist',
     photo: 'staffDavis' as const,
@@ -189,15 +171,6 @@ export const teamMembers = [
       'Her personal interests include spending time with her two kids, following them in their chosen activities, as well as reading, traveling, and exercising.',
       'She moved to this area after graduating from DMU and has enjoyed practicing PT in various settings to include: outpatient orthopedics, aquatics, home health, pediatrics, and geriatrics.',
       'Her professional interests include geriatrics and pediatrics, restoring patients to their highest functional level.',
-    ],
-    email: null,
-  },
-  {
-    name: 'Tiffany Donner, SSD',
-    role: 'Social Service Director',
-    photo: 'staffDonner' as const,
-    bio: [
-      'Tiffany has been working at Hilltop Estates for two years now. She was a CNA/MA prior to accepting the SSD position in July 2018. Prior to Hilltop Estates, Tiffany worked for four years at Gothenburg Health as a CNA on Acute. She loves to take care of others, and it is her passion to meet everyone\'s needs.',
     ],
     email: null,
   },
@@ -211,11 +184,38 @@ export const teamMembers = [
     email: 'hilltopact@qwestoffice.net',
   },
   {
+    name: 'Scott Bahe, MHA, NHA',
+    role: 'Administrator',
+    photo: 'staffBahe' as const,
+    bio: [
+      'Scott has been the administrator of Hilltop Estates for over 20 years. Mr. Bahe has a master\'s degree in healthcare administration from Bellevue University. His wife Linda and he have raised a family of three sons and currently has four grandchildren.',
+    ],
+    email: 'scott@hilltop-estates.com',
+  },
+  {
+    name: 'Tiffany Donner, SSD',
+    role: 'Social Service Director',
+    photo: 'staffDonner' as const,
+    bio: [
+      'Tiffany has been working at Hilltop Estates for two years now. She was a CNA/MA prior to accepting the SSD position in July 2018. Prior to Hilltop Estates, Tiffany worked for four years at Gothenburg Health as a CNA on Acute. She loves to take care of others, and it is her passion to meet everyone\'s needs.',
+    ],
+    email: null,
+  },
+  {
     name: 'Kay Neal',
     role: 'Dietary Manager',
     photo: null,
     bio: ['Kay remains committed to making mealtime a great experience for our residents.'],
     email: 'hilltopdietary@qwestoffice.net',
+  },
+  {
+    name: 'Loretta Smith, RN, DON',
+    role: 'Director of Nursing',
+    photo: null,
+    bio: [
+      'Loretta is a mother of three and has been a nurse for over 20 years. She has a passion for the elderly and long-term care.',
+    ],
+    email: 'donhilltop@qwestoffice.net',
   },
   {
     name: 'Jesseca Mitchum',

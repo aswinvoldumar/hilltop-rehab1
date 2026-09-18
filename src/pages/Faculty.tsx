@@ -1,14 +1,7 @@
 import { images } from '../assets/images'
 import { ContactCTA } from '../components/ContactCTA'
 import { PageHero } from '../components/PageHero'
-import { teamMembers } from '../data/site'
-
-const photos = {
-  staffBahe: images.staffBahe,
-  staffDavis: images.staffDavis,
-  staffDonner: images.staffDonner,
-  staffGarcia: images.staffGarcia,
-}
+import { TeamSlider } from '../components/TeamSlider'
 
 export function Faculty() {
   return (
@@ -53,50 +46,10 @@ export function Faculty() {
           </p>
         </div>
       </section>
-      <section className="bg-white px-5 py-16 sm:px-8 lg:px-12">
+      <section className="bg-cream px-5 py-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-content">
-          <h2 className="text-3xl font-extrabold text-ink sm:text-4xl">Meet Our Team</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {teamMembers.map((member) => (
-              <article
-                key={member.name}
-                className="overflow-hidden rounded-[1.75rem] border border-line bg-cream/60"
-              >
-                {member.photo ? (
-                  <img
-                    src={photos[member.photo]}
-                    alt={member.name}
-                    className="h-72 w-full object-cover object-top"
-                  />
-                ) : (
-                  <div className="flex h-40 items-center justify-center bg-brand-soft text-4xl font-bold text-brand">
-                    {member.name
-                      .split(' ')
-                      .slice(0, 2)
-                      .map((part) => part[0])
-                      .join('')}
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-ink">{member.name}</h3>
-                  <p className="mt-1 font-medium text-brand">{member.role}</p>
-                  {member.bio.map((paragraph) => (
-                    <p key={paragraph} className="mt-3 text-muted">
-                      {paragraph}
-                    </p>
-                  ))}
-                  {member.email ? (
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="mt-4 inline-block font-semibold text-brand underline"
-                    >
-                      {member.email}
-                    </a>
-                  ) : null}
-                </div>
-              </article>
-            ))}
-          </div>
+          <h2 className="mb-10 text-center text-3xl font-extrabold text-ink sm:text-4xl">Meet Our Team</h2>
+          <TeamSlider />
         </div>
       </section>
       <ContactCTA />
