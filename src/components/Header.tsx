@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Mail, Menu, Phone } from 'lucide-react'
+import { Clock, Mail, Menu, Phone } from 'lucide-react'
 import { images } from '../assets/images'
 import { navItems, site } from '../data/site'
 import { Button } from './Button'
@@ -28,6 +28,10 @@ export function Header() {
                 <Mail className="h-4 w-4" />
                 {site.email}
               </a>
+              <span className="inline-flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                Hours: {site.hoursLabel}
+              </span>
             </div>
           </div>
 
