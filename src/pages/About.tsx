@@ -1,6 +1,7 @@
 import { aboutVideoUrl, images } from '../assets/images'
 import { Button } from '../components/Button'
 import { ContactCTA } from '../components/ContactCTA'
+import { FacilityVideo } from '../components/FacilityVideo'
 import { PageHero } from '../components/PageHero'
 import { site } from '../data/site'
 
@@ -58,15 +59,8 @@ export function About() {
             </p>
           </div>
         </div>
-        <div className="mt-16 overflow-hidden rounded-[2rem] bg-ink">
-          <video
-            className="aspect-video w-full object-cover"
-            controls
-            poster={images.aboutMedia}
-            preload="metadata"
-          >
-            <source src={aboutVideoUrl} type="video/mp4" />
-          </video>
+        <div className="mt-16">
+          <FacilityVideo src={aboutVideoUrl} poster={images.aboutMedia} />
         </div>
         <div className="mt-12 rounded-[1.75rem] bg-brand-soft p-8">
           <h2 className="text-2xl font-bold text-ink">Hear What Everyone Else Thinks</h2>

@@ -1,5 +1,6 @@
 import { aboutVideoUrl, images } from '../assets/images'
 import { Button } from './Button'
+import { FacilityVideo } from './FacilityVideo'
 
 export function AboutSection() {
   return (
@@ -11,16 +12,8 @@ export function AboutSection() {
             <span className="block text-brand">Hilltop Estates</span>
           </h2>
         </div>
-        <div className="mt-12 overflow-hidden rounded-[2rem] bg-ink">
-          <video
-            className="aspect-video w-full object-cover"
-            controls
-            poster={images.aboutMedia}
-            preload="metadata"
-          >
-            <source src={aboutVideoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="mt-12">
+          <FacilityVideo src={aboutVideoUrl} poster={images.aboutMedia} />
         </div>
         <p className="mx-auto mt-8 max-w-3xl text-center text-lg text-muted">
           Hilltop Estates offers primary nursing care to all residents. This means that our staff gets
