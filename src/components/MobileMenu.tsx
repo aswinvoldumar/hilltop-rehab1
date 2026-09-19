@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Phone, X } from 'lucide-react'
-import { images } from '../assets/images'
 import { navItems, site } from '../data/site'
 import { Button } from './Button'
+import { LogoLink } from './LogoLink'
 
 type MobileMenuProps = {
   open: boolean
@@ -36,7 +36,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       />
       <div className="absolute inset-y-0 right-0 flex w-[min(100%,22rem)] flex-col bg-white shadow-2xl">
         <div className="flex items-center justify-between border-b border-line px-5 py-4">
-          <img src={images.logo} alt={site.name} className="h-12 w-auto" />
+          <LogoLink onClick={onClose} imageClassName="h-12 w-auto" />
           <button
             type="button"
             onClick={onClose}

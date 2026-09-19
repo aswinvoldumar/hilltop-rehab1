@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Clock, Mail, Menu, Phone } from 'lucide-react'
-import { images } from '../assets/images'
 import { navItems, site } from '../data/site'
 import { Button } from './Button'
+import { LogoLink } from './LogoLink'
 import { MobileMenu } from './MobileMenu'
 
 export function Header() {
@@ -36,9 +36,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center justify-between gap-3 px-4 py-3 lg:px-6">
-            <NavLink to="/" className="shrink-0 rounded-xl">
-              <img src={images.logo} alt={site.name} className="h-12 w-auto sm:h-14" />
-            </NavLink>
+            <LogoLink />
 
             <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
               {navItems.map((item) => (

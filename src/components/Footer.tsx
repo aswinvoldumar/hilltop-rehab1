@@ -1,14 +1,14 @@
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
-import { images } from '../assets/images'
 import { legalLinks, navItems, site } from '../data/site'
+import { LogoLink } from './LogoLink'
 
 export function Footer() {
   return (
     <footer className="bg-brand-dark text-white">
       <div className="mx-auto grid max-w-content gap-10 px-5 py-16 sm:px-8 lg:px-12 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <img src={images.logo} alt="" className="mb-4 h-14 w-auto rounded-lg" />
+          <LogoLink className="mb-4 inline-block rounded-lg" imageClassName="h-14 w-auto rounded-lg" />
           <p className="text-lg font-semibold">{site.name}</p>
           <p className="mt-2 text-white/75">{site.tagline}</p>
         </div>
