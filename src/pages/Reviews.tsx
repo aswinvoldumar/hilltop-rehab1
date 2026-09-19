@@ -2,6 +2,7 @@ import { Quote } from 'lucide-react'
 import { images } from '../assets/images'
 import { ContactCTA } from '../components/ContactCTA'
 import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
 import { testimonials } from '../data/site'
 
 export function Reviews() {
@@ -15,15 +16,15 @@ export function Reviews() {
       />
       <section className="mx-auto max-w-content px-5 py-16 sm:px-8 lg:px-12">
         {testimonials.map((item) => (
-          <blockquote
-            key={item.name}
-            className="rounded-[1.75rem] border border-line bg-white p-8 shadow-sm"
-          >
+          <Reveal key={item.name} direction="from-left">
+          <blockquote className="rounded-[1.75rem] border border-line bg-white p-8 shadow-sm">
             <Quote className="h-8 w-8 text-brand" aria-hidden="true" />
             <p className="mt-4 text-xl text-ink">“{item.quote}”</p>
             <footer className="mt-6 font-semibold text-brand-dark">— {item.name}</footer>
           </blockquote>
+          </Reveal>
         ))}
+        <Reveal direction="from-bottom" delay={80}>
         <div className="mt-8 rounded-[1.75rem] border border-dashed border-line bg-cream p-8">
           <h2 className="text-2xl font-bold text-ink">Hear What Everyone Else Thinks</h2>
           <p className="mt-3 text-muted">
@@ -32,6 +33,7 @@ export function Reviews() {
             our service, and they're always writing to tell us about it.
           </p>
         </div>
+        </Reveal>
       </section>
       <ContactCTA />
     </>

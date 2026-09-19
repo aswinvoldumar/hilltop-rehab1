@@ -1,3 +1,5 @@
+import { Reveal } from './Reveal'
+
 type PageHeroProps = {
   eyebrow?: string
   title: string
@@ -8,6 +10,7 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, image, imageAlt }: PageHeroProps) {
   return (
+    <Reveal direction="from-scale">
     <section className="relative isolate overflow-hidden rounded-b-[2rem] bg-black pt-32 sm:pt-36">
       <img src={image} alt={imageAlt} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-black/50" />
@@ -22,5 +25,6 @@ export function PageHero({ eyebrow, title, description, image, imageAlt }: PageH
         ) : null}
       </div>
     </section>
+    </Reveal>
   )
 }

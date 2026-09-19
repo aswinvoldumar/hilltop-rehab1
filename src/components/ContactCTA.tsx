@@ -1,9 +1,11 @@
 import { Phone } from 'lucide-react'
 import { site } from '../data/site'
 import { Button } from './Button'
+import { Reveal } from './Reveal'
 
 export function ContactCTA() {
   return (
+    <Reveal direction="from-scale">
     <section className="px-5 pb-20 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-content overflow-hidden rounded-[2rem] bg-brand px-6 py-14 text-center text-white sm:px-12">
         <h2 className="text-3xl font-extrabold sm:text-4xl">Ready to learn more about Hilltop Estates?</h2>
@@ -21,5 +23,6 @@ export function ContactCTA() {
         </div>
       </div>
     </section>
+    </Reveal>
   )
 }

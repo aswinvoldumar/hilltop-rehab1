@@ -2,6 +2,7 @@ import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { images } from '../assets/images'
 import { InquiryForm } from '../components/InquiryForm'
 import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
 import { site } from '../data/site'
 
 export function Contact() {
@@ -14,6 +15,7 @@ export function Contact() {
         imageAlt="Hilltop Estates Rehabilitation Center"
       />
       <section className="mx-auto grid max-w-content gap-12 px-5 py-16 sm:px-8 lg:px-12 lg:grid-cols-2">
+        <Reveal direction="from-left">
         <div>
           <h2 className="text-3xl font-extrabold text-ink">Get in Touch With Us</h2>
           <p className="mt-4 text-lg text-muted">
@@ -71,7 +73,10 @@ export function Contact() {
             </li>
           </ul>
         </div>
-        <InquiryForm kind="contact" />
+        </Reveal>
+        <Reveal direction="from-right" delay={80}>
+          <InquiryForm kind="contact" />
+        </Reveal>
       </section>
     </>
   )
