@@ -120,30 +120,30 @@ function VoiceAgentPanel({ agentId }: { agentId: string }) {
 
   if (!chatOpen) {
     return (
-      <div className="fixed bottom-5 right-5 z-[100] w-[min(22rem,calc(100vw-1.5rem))] rounded-[1.75rem] bg-white p-4 shadow-[0_18px_50px_rgba(26,46,34,0.16)]">
-        <div className="mb-4 flex items-center gap-3">
-          <ElevenLabsOrb size={40} speaking={starting} />
-          <p className="text-lg font-semibold tracking-tight text-ink">{voiceAgentWidget.actionText}</p>
+      <div className="fixed bottom-4 right-4 z-[100] w-[min(16.5rem,calc(100vw-1.5rem))] rounded-[1.35rem] bg-white p-3 shadow-[0_12px_32px_rgba(26,46,34,0.14)]">
+        <div className="mb-2.5 flex items-center gap-2">
+          <ElevenLabsOrb size={28} speaking={starting} />
+          <p className="text-sm font-semibold tracking-tight text-ink">{voiceAgentWidget.actionText}</p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <button
             type="button"
             onClick={openChat}
             disabled={starting}
-            className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full bg-ink px-5 text-base font-semibold text-white transition-colors hover:bg-brand-dark disabled:opacity-70"
+            className="inline-flex min-h-9 flex-1 items-center justify-center gap-1.5 rounded-full bg-ink px-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark disabled:opacity-70"
           >
-            <Phone className="h-4 w-4" />
+            <Phone className="h-3.5 w-3.5" />
             {starting ? 'Starting...' : voiceAgentWidget.startCallText}
           </button>
           <button
             type="button"
             onClick={openChat}
             disabled={starting}
-            className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-colors hover:bg-cream disabled:opacity-70"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-colors hover:bg-cream disabled:opacity-70"
             aria-label="Open chat"
           >
-            <MessageCircle className="h-5 w-5" />
+            <MessageCircle className="h-4 w-4" />
           </button>
         </div>
       </div>
@@ -158,28 +158,28 @@ function VoiceAgentPanel({ agentId }: { agentId: string }) {
         : voiceAgentWidget.listeningText
 
   return (
-    <div className="fixed bottom-5 right-5 z-[100] flex h-[min(34rem,calc(100vh-2.5rem))] w-[min(22.5rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-[0_18px_50px_rgba(26,46,34,0.16)]">
-      <div className="flex items-center gap-3 border-b border-line px-4 py-3">
-        <ElevenLabsOrb size={40} speaking={conversation.isSpeaking || starting} />
+    <div className="fixed bottom-4 right-4 z-[100] flex h-[min(24rem,calc(100vh-2rem))] w-[min(17.5rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-[1.35rem] bg-white shadow-[0_12px_32px_rgba(26,46,34,0.14)]">
+      <div className="flex items-center gap-2 border-b border-line px-3 py-2.5">
+        <ElevenLabsOrb size={28} speaking={conversation.isSpeaking || starting} />
         <div className="min-w-0 flex-1">
-          <p className="font-semibold tracking-tight text-ink">{voiceAgentWidget.actionText}</p>
-          <p className="truncate text-sm text-muted">{statusLabel}</p>
+          <p className="text-sm font-semibold tracking-tight text-ink">{voiceAgentWidget.actionText}</p>
+          <p className="truncate text-xs text-muted">{statusLabel}</p>
         </div>
         <button
           type="button"
           onClick={closeChat}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink hover:bg-cream"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-line text-ink hover:bg-cream"
           aria-label="Close chat"
         >
-          <X className="h-5 w-5" />
+          <X className="h-4 w-4" />
         </button>
       </div>
 
-      <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
+      <div ref={listRef} className="flex-1 space-y-2 overflow-y-auto px-3 py-3">
         {messages.map((item) => (
           <div
             key={item.id}
-            className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-6 ${
+            className={`max-w-[85%] rounded-xl px-2.5 py-2 text-xs leading-5 ${
               item.role === 'user' ? 'ml-auto bg-brand text-white' : 'bg-cream text-ink'
             }`}
           >
@@ -188,10 +188,10 @@ function VoiceAgentPanel({ agentId }: { agentId: string }) {
         ))}
       </div>
 
-      {error ? <p className="px-4 pb-2 text-sm text-red-700">{error}</p> : null}
+      {error ? <p className="px-3 pb-2 text-xs text-red-700">{error}</p> : null}
 
       <form
-        className="border-t border-line p-3"
+        className="border-t border-line p-2.5"
         onSubmit={(event) => {
           event.preventDefault()
           sendDraft()
@@ -200,7 +200,7 @@ function VoiceAgentPanel({ agentId }: { agentId: string }) {
         <label className="sr-only" htmlFor="hilltop-voice-chat">
           Type a message
         </label>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <input
             id="hilltop-voice-chat"
             value={draft}
@@ -211,14 +211,14 @@ function VoiceAgentPanel({ agentId }: { agentId: string }) {
               }
             }}
             placeholder="Type a message..."
-            className="min-h-11 flex-1 rounded-full border border-line bg-cream px-4 text-sm text-ink outline-none focus:border-brand"
+            className="min-h-9 flex-1 rounded-full border border-line bg-cream px-3 text-xs text-ink outline-none focus:border-brand"
           />
           <button
             type="submit"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-ink text-white hover:bg-brand-dark"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink text-white hover:bg-brand-dark"
             aria-label="Send message"
           >
-            <Send className="h-4 w-4" />
+            <Send className="h-3.5 w-3.5" />
           </button>
         </div>
       </form>
