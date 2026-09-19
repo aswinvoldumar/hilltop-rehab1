@@ -1,6 +1,7 @@
 import { images } from '../assets/images'
 import { InquiryForm } from '../components/InquiryForm'
 import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
 import { callbackNotes, site } from '../data/site'
 
 export function RequestCallback() {
@@ -13,6 +14,7 @@ export function RequestCallback() {
         imageAlt="Rehabilitation consultation"
       />
       <section className="mx-auto grid max-w-content gap-12 px-5 py-16 sm:px-8 lg:px-12 lg:grid-cols-2">
+        <Reveal direction="from-left">
         <div>
           <p className="text-lg text-muted">
             Fill out this short form and a Hilltop Estates representative will contact you in two to
@@ -34,7 +36,10 @@ export function RequestCallback() {
             .
           </p>
         </div>
-        <InquiryForm kind="callback" />
+        </Reveal>
+        <Reveal direction="from-right" delay={80}>
+          <InquiryForm kind="callback" />
+        </Reveal>
       </section>
     </>
   )

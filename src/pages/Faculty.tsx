@@ -3,6 +3,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 import { images } from '../assets/images'
 import { ContactCTA } from '../components/ContactCTA'
 import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
 import { teamMembers } from '../data/site'
 
 const photos = {
@@ -102,6 +103,7 @@ export function Faculty() {
       />
       <section className="mx-auto max-w-content px-5 py-16 sm:px-8 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-2">
+          <Reveal direction="from-left">
           <div>
             <h2 className="text-3xl font-extrabold text-ink">Fully Trained Staff</h2>
             <p className="mt-4 text-lg text-muted">
@@ -110,6 +112,8 @@ export function Faculty() {
               require. We hope you're ready to receive care from the best.
             </p>
           </div>
+          </Reveal>
+          <Reveal direction="from-right" delay={80}>
           <div>
             <h2 className="text-3xl font-extrabold text-ink">Our Certifications Aren't Everything</h2>
             <p className="mt-4 text-lg text-muted">
@@ -123,7 +127,9 @@ export function Faculty() {
               compassion. We have over 20 years of experience.
             </p>
           </div>
+          </Reveal>
         </div>
+        <Reveal direction="from-bottom">
         <div className="mt-12 rounded-[1.75rem] bg-brand-soft p-8">
           <h2 className="text-2xl font-bold text-ink">Who Are We?</h2>
           <p className="mt-3 max-w-3xl text-muted">
@@ -133,13 +139,22 @@ export function Faculty() {
             you join us.
           </p>
         </div>
+        </Reveal>
       </section>
       <section className="bg-cream px-5 py-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-content">
+          <Reveal direction="from-bottom">
           <h2 className="mb-10 text-center text-3xl font-extrabold text-ink sm:text-4xl">Meet Our Team</h2>
+          </Reveal>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8">
-            {teamMembers.map((member) => (
-              <TeamMemberCard key={member.name} member={member} />
+            {teamMembers.map((member, index) => (
+              <Reveal
+                key={member.name}
+                direction={index % 2 === 0 ? 'from-left' : 'from-right'}
+                delay={(index % 3) * 80}
+              >
+                <TeamMemberCard member={member} />
+              </Reveal>
             ))}
           </div>
         </div>

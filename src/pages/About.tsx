@@ -3,6 +3,7 @@ import { Button } from '../components/Button'
 import { ContactCTA } from '../components/ContactCTA'
 import { FacilityVideo } from '../components/FacilityVideo'
 import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
 import { site } from '../data/site'
 
 export function About() {
@@ -16,6 +17,7 @@ export function About() {
       />
       <section className="mx-auto max-w-content px-5 py-16 sm:px-8 lg:px-12">
         <div className="grid items-center gap-10 lg:grid-cols-2">
+          <Reveal direction="from-left">
           <div>
             <h2 className="text-3xl font-extrabold text-ink">We're Here to Care for You</h2>
             <p className="mt-4 text-lg text-muted">
@@ -25,18 +27,24 @@ export function About() {
               team in Gothenburg or ensure that it's there for a loved one, trust Hilltop Estates.
             </p>
           </div>
+          </Reveal>
+          <Reveal direction="from-right" delay={80}>
           <img
             src={images.building}
             alt="Hilltop Estates building at sunset"
             className="h-80 w-full rounded-[1.75rem] object-cover"
           />
+          </Reveal>
         </div>
         <div className="mt-16 grid items-start gap-10 lg:grid-cols-2">
+          <Reveal direction="from-left">
           <img
             src={images.aviary}
             alt="Aviary at Hilltop Estates"
             className="h-80 w-full rounded-[1.75rem] object-cover"
           />
+          </Reveal>
+          <Reveal direction="from-right" delay={80}>
           <div>
             <h2 className="text-3xl font-extrabold text-ink">Why Hilltop Estates?</h2>
             <p className="mt-4 text-lg text-muted">
@@ -58,10 +66,14 @@ export function About() {
               beautiful aviary. Call {site.phoneDisplay} now to find out about a care option for you.
             </p>
           </div>
+          </Reveal>
         </div>
+        <Reveal direction="from-scale">
         <div className="mt-16">
           <FacilityVideo src={aboutVideoUrl} poster={images.aboutMedia} />
         </div>
+        </Reveal>
+        <Reveal direction="from-bottom">
         <div className="mt-12 rounded-[1.75rem] bg-brand-soft p-8">
           <h2 className="text-2xl font-bold text-ink">Hear What Everyone Else Thinks</h2>
           <p className="mt-3 max-w-3xl text-muted">
@@ -74,6 +86,7 @@ export function About() {
             <Button to="/reviews">Read Reviews</Button>
           </div>
         </div>
+        </Reveal>
       </section>
       <ContactCTA />
     </>

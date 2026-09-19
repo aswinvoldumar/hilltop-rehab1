@@ -2,6 +2,7 @@ import { images } from '../assets/images'
 import { ContactCTA } from '../components/ContactCTA'
 import { InquiryForm } from '../components/InquiryForm'
 import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
 import { employmentContacts, site } from '../data/site'
 
 export function Employment() {
@@ -14,6 +15,7 @@ export function Employment() {
         imageAlt="Hilltop Estates Rehabilitation Center"
       />
       <section className="mx-auto grid max-w-content gap-12 px-5 py-16 sm:px-8 lg:px-12 lg:grid-cols-2">
+        <Reveal direction="from-left">
         <div>
           <h2 className="text-3xl font-extrabold text-ink">Become a Member of Our Team</h2>
           <p className="mt-4 text-lg text-muted">
@@ -43,7 +45,10 @@ export function Employment() {
             </a>
           </p>
         </div>
-        <InquiryForm kind="employment" />
+        </Reveal>
+        <Reveal direction="from-right" delay={80}>
+          <InquiryForm kind="employment" />
+        </Reveal>
       </section>
       <ContactCTA />
     </>

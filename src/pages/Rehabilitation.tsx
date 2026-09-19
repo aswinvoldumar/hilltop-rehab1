@@ -1,8 +1,9 @@
 import { images } from '../assets/images'
+import { Button } from '../components/Button'
 import { ContactCTA } from '../components/ContactCTA'
 import { PageHero } from '../components/PageHero'
+import { Reveal } from '../components/Reveal'
 import { rehabServices, site, testimonials } from '../data/site'
-import { Button } from '../components/Button'
 
 export function Rehabilitation() {
   return (
@@ -15,6 +16,7 @@ export function Rehabilitation() {
       />
       <section className="mx-auto max-w-content px-5 py-16 sm:px-8 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-2">
+          <Reveal direction="from-left">
           <div>
             <h2 className="text-3xl font-extrabold text-ink">It Takes Time to Get Better</h2>
             <p className="mt-4 text-lg text-muted">
@@ -27,6 +29,8 @@ export function Rehabilitation() {
               delicate process. We are here to help, each step of the way.
             </p>
           </div>
+          </Reveal>
+          <Reveal direction="from-right" delay={80}>
           <div className="overflow-hidden rounded-[1.75rem]">
             <img
               src={images.rehabRoom}
@@ -34,7 +38,9 @@ export function Rehabilitation() {
               className="h-full w-full object-cover"
             />
           </div>
+          </Reveal>
         </div>
+        <Reveal direction="from-bottom">
         <div className="mt-16">
           <h2 className="text-3xl font-extrabold text-ink">
             Rehabilitation Through Physical and Occupational Therapy
@@ -54,21 +60,31 @@ export function Rehabilitation() {
             Count on us to work with your insurance company and handle all the paperwork.
           </p>
         </div>
+        </Reveal>
       </section>
       <section className="bg-cream px-5 py-16 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-content">
+          <Reveal direction="from-bottom">
           <h2 className="text-3xl font-extrabold text-ink">Our Services and Areas of Treatment</h2>
+          </Reveal>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {rehabServices.map((service) => (
-              <article key={service.title} className="rounded-[1.5rem] bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-ink">{service.title}</h3>
-                <p className="mt-2 text-muted">{service.description}</p>
-              </article>
+            {rehabServices.map((service, index) => (
+              <Reveal
+                key={service.title}
+                direction={index % 2 === 0 ? 'from-left' : 'from-right'}
+                delay={(index % 3) * 70}
+              >
+                <article className="rounded-[1.5rem] bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-bold text-ink">{service.title}</h3>
+                  <p className="mt-2 text-muted">{service.description}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
       <section className="mx-auto max-w-content px-5 py-16 sm:px-8 lg:px-12">
+        <Reveal direction="from-left">
         <h2 className="text-3xl font-extrabold text-ink">Who's Going to Take Care of You?</h2>
         <p className="mt-4 max-w-3xl text-lg text-muted">
           If you choose Hilltop Estates, your care will be in the hands of one of our excellent
@@ -78,6 +94,8 @@ export function Rehabilitation() {
         <div className="mt-6">
           <Button to="/faculty">Meet Our Team</Button>
         </div>
+        </Reveal>
+        <Reveal direction="from-right">
         <h2 className="mt-16 text-3xl font-extrabold text-ink">
           Trust Us to Make Rehabilitation Easy and Comfortable
         </h2>
@@ -85,10 +103,13 @@ export function Rehabilitation() {
         <div className="mt-6">
           <Button href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</Button>
         </div>
+        </Reveal>
+        <Reveal direction="from-bottom">
         <blockquote className="mt-12 max-w-3xl rounded-[1.75rem] border border-line bg-cream p-8">
           <p className="text-xl text-ink">“{testimonials[0].quote}”</p>
           <footer className="mt-4 font-semibold text-brand-dark">— {testimonials[0].name}</footer>
         </blockquote>
+        </Reveal>
       </section>
       <ContactCTA />
     </>
